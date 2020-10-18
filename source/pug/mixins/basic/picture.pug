@@ -1,0 +1,14 @@
+mixin picture(props={})
+  - const {path, image, imgType, altText, width, height} = props;
+
+  //- Принимает
+  //- path  {string} - path from img folder
+  //- image  {string} - img name
+  //- imgType  {string} - img type
+  //- altText  {string} - img alt
+  //- width  {number} - img width
+  //- height  {number} - img height
+
+  picture
+    source(type='image/webp', srcset=`img/${path}/${image}@1x.webp 1x, img/${path}/${image}@2x.webp 2x`)
+    img(src=`img/${path}/${image}@1x.${imgType}`, srcset=`img/${path}/${image}@2x.${imgType} 2x`, alt=altText, width= width ? width : null, height= height ? height : null)&attributes(attributes)

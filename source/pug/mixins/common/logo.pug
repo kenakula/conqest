@@ -1,0 +1,33 @@
+mixin logo(logo, text, currentPage, mods)
+
+  //- logo, text, currentPage, mods
+  //- Принимает:
+  //-   logo    {object} - объект логотипа из header.data.pug
+  //-   text    {string} - текст
+  //-   currentPage {string} - индекс текущей страницы
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +logo(logo, 'Текст', currentPage, 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + 'logo--' + modsList[i].trim();
+      }
+    }
+
+  if currentPage === 'main'
+    a.logo(class= allMods)= text
+      picture
+        if mods === 'dark'
+          source(srcset= `img/common/${logo.pictureDark.name}.webp 1x`)
+          img(src= `img/common/${logo.pictureDark.name}.png`, width= logo.pictureDark.width, height= logo.pictureDark.height, alt= logo.alt)
+        else
+          source(srcset= `img/common/${logo.pictureLight.name}.webp 1x`)
+          img(src= `img/common/${logo.pictureLight.name}.png`, width= logo.pictureLight.width, height= logo.pictureLight.height, alt= logo.alt)
+
+
+

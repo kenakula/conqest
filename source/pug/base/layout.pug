@@ -1,0 +1,44 @@
+include mixins.pug
+include header.pug
+include footer.pug
+include modal.pug
+
+block data
+block variables
+
+doctype html
+html(class='page  no-js', lang='ru')
+
+  block head
+    head
+      title= title
+      meta(charset='utf-8')
+      meta(name='viewport', content='width=device-width, initial-scale=1.0')
+      //- Edge и ряд мобильных браузеров слишком умны. Отключим это.
+      meta(name='format-detection', content='telephone=no')
+      meta(name='format-detection', content='date=no')
+      meta(name='format-detection', content='address=no')
+      meta(name='format-detection', content='email=no')
+      meta(content='notranslate', name='google')
+      meta(http-equiv='X-UA-Compatible', content='ie=edge')
+      meta(name='description', content= pageDescription)
+      link(rel='stylesheet', href='css/style.min.css')
+
+  body
+    noscript У вас отключен JavaScript. Это пугает.
+    +sprite()
+    .page__inner
+      .page__content
+        +header(currentPage, logo)
+          block nav
+        block main
+
+      .page__footer-wrapper
+        block footer
+          if (hasFooter)
+            +footer()
+
+    block modals
+
+    script(src='js/vendor.min.js')
+    script(src='js/main.min.js')
