@@ -1,6 +1,7 @@
-mixin header(currentPage, logo, headerMod)
+mixin header(currentPage, header, headerMod)
 
   header(class=(headerMod) ? 'header header--' + headerMod : 'header')
     .header__inner.container
-      +logo(logo, 'Conquest', currentPage, 'dark')
+      +logo(header.logo, 'Conquest', currentPage, 'dark')
       block nav
+      +header-toolbar(header.toolbar)

@@ -1,14 +1,40 @@
 -
-  const logo = {
-    pictureDark: {
-      name: 'logo-header',
-      width: 20,
-      height: 20,
+  const header = {
+    logo: {
+      pictureDark: {
+        name: 'logo-header',
+        width: 20,
+        height: 20,
+      },
+      pictureLight: {
+        name: 'logo-footer',
+        width: 25,
+        height: 25,
+      },
+      alt: 'Логотип сайта',
     },
-    pictureLight: {
-      name: 'logo-footer',
-      width: 25,
-      height: 25,
-    },
-    alt: 'Логотип сайта',
+
+    toolbar: [
+      {
+        name: 'search',
+        icon: 'icon-search',
+        iconWidth: 16,
+        iconHeight: 16,
+        hasCounter: false,
+      },
+      {
+        name: 'likes',
+        icon: 'icon-heart',
+        iconWidth: 21,
+        iconHeight: 17,
+        hasCounter: true,
+      },
+      {
+        name: 'cart',
+        icon: 'icon-cart',
+        iconWidth: 18,
+        iconHeight: 16,
+        hasCounter: true,
+      }
+    ]
   };

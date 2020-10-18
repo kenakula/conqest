@@ -1,0 +1,57 @@
+.header-toolbar {
+  margin-left: auto;
+
+  ul {
+    @include list-reset;
+
+    display: flex;
+    align-items:  center;
+  }
+
+  li {
+    margin-right: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.header-toolbar__button {
+  @include button-reset;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    opacity: $hover-opacity;
+  }
+
+  &:active {
+    opacity: $active-opacity;
+  }
+
+  span {
+    position: absolute;
+    top: -4px;
+    right: -7px;
+    width: 13px;
+    height: 13px;
+    border-radius: $border-round;
+    font-size: rem(8);
+    line-height: 14px;
+    background-color: $color-zinnwaldite;
+    text-align: center;
+    opacity: 0;
+  }
+
+  &--notempty {
+    span {
+      opacity: 1;
+    }
+  }
+}

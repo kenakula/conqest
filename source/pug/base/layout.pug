@@ -4,6 +4,9 @@ include footer.pug
 include modal.pug
 
 block data
+  include ../data/main-nav.data.pug
+  include ../data/header.data.pug
+
 block variables
 
 doctype html
@@ -29,7 +32,7 @@ html(class='page  no-js', lang='ru')
     +sprite()
     .page__inner
       .page__content
-        +header(currentPage, logo)
+        +header(currentPage, header)
           block nav
         block main
 

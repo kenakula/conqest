@@ -1,0 +1,13 @@
+mixin header-toolbar(buttons)
+
+  //- Принимает:
+  //- buttons {array} - массив объектов кнопок
+
+  .header-toolbar(class=(mod) ? 'header-toolbar header-toolbar--' + headerMod : 'header-toolbar')
+    ul.header-toolbar__list
+      each button in buttons
+        li
+          button(type= 'button').header-toolbar__button
+            +icon(button.icon, button.iconWidth, button.iconHeight)
+            if (button.hasCounter)
+              span 1

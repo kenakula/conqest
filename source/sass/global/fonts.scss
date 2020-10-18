@@ -1,10 +1,62 @@
 @font-face {
-  font-style: normal;
+  font-family: 'Playfair Display Regular';
+  src: url('../fonts/Playfairdisplay-regular.woff2') format('woff2'),
+       url('../fonts/playfairdisplay-regular.woff2') format('woff');
   font-weight: 400;
-  font-family: "";
-
+  font-style: normal;
   font-display: swap;
-  src:
-    url("../fonts/.woff2") format("woff2"),
-    url("../fonts/.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Playfair Display Bold';
+  src: url('../fonts/Playfairdisplay-bold.woff2') format('woff2'),
+       url('../fonts/playfairdisplay-bold.woff2') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Regular';
+  src: url('../fonts/Roboto-regular.woff2') format('woff2'),
+       url('../fonts/Roboto-regular.woff2') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Light';
+  src: url('../fonts/Roboto-light.woff2') format('woff2'),
+       url('../fonts/Roboto-light.woff2') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Medium';
+  src: url('../fonts/Roboto-medium.woff2') format('woff2'),
+       url('../fonts/Roboto-medium.woff2') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Bold';
+  src: url('../fonts/Roboto-bold.woff2') format('woff2'),
+       url('../fonts/Roboto-bold.woff2') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Prata';
+  src: url('../fonts/Prata.woff2') format('woff2'),
+       url('../fonts/Prata.woff2') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
