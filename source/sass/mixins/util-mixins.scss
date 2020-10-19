@@ -320,6 +320,32 @@
   }
 }
 
+@mixin full-sphere-border($width, $height, $right, $top, $color, $z-index) {
+  &::before {
+    @include pseudo;
+
+    right: $right;
+    top: $top;
+    z-index: $z-index / 2;
+    width: $width;
+    height: $height;
+    border-radius: 50%;
+    background: $color;
+  }
+
+  &::after {
+    @include pseudo;
+
+    right: $right + 1px;
+    top: $top + 1px;
+    z-index: $z-index;
+    width: $width - 2px;
+    height: $height - 2px;
+    border-radius: 50%;
+    background-color: $color-default-white;
+  }
+}
+
 @mixin section-title {
   font-family: $font-title-regular;
   font-size: rem(32);

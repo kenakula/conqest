@@ -1,4 +1,4 @@
-mixin socials(props= {})
+mixin socials(props= {}, mods, isLarge)
 
   -
     // список модификаторов
@@ -6,13 +6,20 @@ mixin socials(props= {})
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + 'logo--' + modsList[i].trim();
+        allMods = allMods + 'socials--' + modsList[i].trim() + ' ';
       }
+      allMods = allMods.trim();
     }
 
-  .socials
+
+  .socials(class= allMods)
     ul.socials__list
       each item in props
+        -
+          let iconViewBox = `0 0 ${item.icon.width} ${item.icon.height}`;
+          let iconWidth = isLarge ? item.icon.big.width : item.icon.width;
+          let iconHeight = isLarge ? item.icon.big.height : item.icon.height;
+
         li.socials__item
           a.socials__link(href= item.link, aria-label= item.label)
-            +icon(item.icon.name, item.icon.width, item.icon.height)
+            +icon(item.icon.name, iconWidth, iconHeight, iconViewBox)

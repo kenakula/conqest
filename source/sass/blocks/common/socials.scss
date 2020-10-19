@@ -1,3 +1,27 @@
+.socials {
+  position: relative;
+
+  &--horizontal {
+    .socials__list {
+      flex-direction: row;
+    }
+
+    .socials__item {
+      margin: 0;
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .socials__link {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
 .socials__list {
   @include list-reset;
 

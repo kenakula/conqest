@@ -1,2 +1,29 @@
-mixin footer(footerMod)
-  footer(class= (footerMod) ? 'footer footer--' + footerMod : 'footer')
+mixin footer(props={})
+  -
+    const {tel, email, columns, logo} = props;
+    const phoneNumber = tel.replace(/\D+/g, '');
+
+  footer.footer
+    h2.visually-hidden Подвал сайта
+    .footer__wrapper.container
+      .footer__contacts
+        +logo(logo, 'Conquest', currentPage, 'light')
+        a(href=`tel:${phoneNumber}`) !{tel}
+        a(href= `mailto:${email}`) !{email}
+      .footer__sitemap
+        ul.footer__list
+          each item in columns
+            +column(item)
+
+mixin column(item)
+  li.footer__column
+    h3 !{item.title}
+    ul
+      each link in item.links
+        +link(link)
+
+mixin link(link)
+  li
+    a(href= link.url)= link.label
+
+

@@ -1,0 +1,18 @@
+mixin subscribe(props={})
+  -
+    const {title, text} = props;
+
+
+
+  section.subscribe
+    .subscribe__wrapper.container
+      .subscribe__inner
+        h2 !{title}
+        p !{text}
+        .subscribe__socials
+          +socials(socials, 'horizontal, large', true)
+      ul.subscribe__img-grid
+        li.subscribe__img.subscribe__img--first
+        li.subscribe__img.subscribe__img--second
+        li.subscribe__img.subscribe__img--third
+

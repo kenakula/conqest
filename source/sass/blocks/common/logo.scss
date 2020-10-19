@@ -7,4 +7,10 @@
   text-transform: uppercase;
   letter-spacing: $letter-spacing;
   color: $color-gray;
+
+  &--light {
+    font-size: rem(16);
+    font-weight: 700;
+    color: $color-default-white;
+  }
 }

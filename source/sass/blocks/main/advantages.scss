@@ -1,16 +1,38 @@
 .advantages {
-  padding: 25px 0;
+  position: relative;
+  margin-bottom: 40px;
+  padding: 65px 0 25px;
+  overflow: hidden;
+
+  &::before {
+    @include pseudo;
+
+    left: 0;
+    top: 0;
+    width: 34%;
+    height: 100%;
+    background-color: $color-spring;
+  }
 }
 
 .advantages__wrapper {
+  @include full-sphere-border(365px, 365px, -120px, -150px, $color-cameo, 10);
+
   margin: 0 auto;
   width: 74%;
 }
 
 .advantages__list {
   @include list-reset;
+  @include full-sphere-border(745px, 745px, -700px, 50px, $color-cameo, 10);
 
+  position: relative;
+  z-index: 100;
   margin-bottom: 20px;
+
+  & > div {
+    z-index: 100;
+  }
 }
 
 .advantages__inner {
