@@ -23,6 +23,8 @@
   }
 
   a {
+    @include interactive-opacity;
+
     font-size: rem(14);
     color: $color-gray;
   }

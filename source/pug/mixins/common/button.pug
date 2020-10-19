@@ -1,0 +1,16 @@
+mixin button(text, mods, isLink, url)
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + 'button--' + modsList[i].trim() + ' ';
+      }
+      allMods = allMods.trim();
+    }
+
+  if isLink === true
+    a.button(href= url, class= allMods)= text
+  else
+    button.button(type= 'button', class= allMods)= text

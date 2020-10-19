@@ -1,0 +1,26 @@
+mixin advantages(advantages)
+
+
+
+  section.advantages
+    .advantages__wrapper
+      ul.advantages__list
+        each item in advantages
+          +advantages-item(item)
+      .advantages__navigation
+        button(type='button', aria-label='Предыдущий слайд').advantages__button.advantages__button--prev
+        span.advantages__slider-counter= '01'
+        button(type='button', aria-label='Следующий слайд').advantages__button.advantages__button--next
+
+mixin advantages-item(item)
+  -
+    const image = item.img;
+
+  li(style=itemBg)
+    .advantages__inner
+      .advantages__img
+        +picture({path: image.path, image: image.name, imgType: image.type, altText: image.alt, width: image.width, height: image.height})
+      .advantages__description
+        h3= item.title
+        p= item.text
+        +button(item.linkText, 'light, big', true, 'catalog.html')

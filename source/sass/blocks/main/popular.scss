@@ -1,0 +1,140 @@
+.popular {
+  padding-top: 79px;
+  padding-bottom: 25px;
+}
+
+.popular__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 98px;
+
+  h2 {
+    @include section-title;
+
+    align-self: center;
+    margin: 0;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  & > a {
+    @include interactive-opacity;
+    @include text-underline($color-ash);
+
+    align-self: flex-end;
+    margin-bottom: 30px;
+    font-family: $font-main-medium;
+    font-weight: 500;
+    font-size: rem(16);
+    color: $color-masala;
+  }
+}
+
+.popular__list {
+  @include list-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.popular__item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-left: 40px;
+  padding-top: 40px;
+  min-height: 467px;
+
+  &:first-child,
+  &:nth-child(2) {
+    margin-top: 0;
+  }
+
+  &--small {
+    min-width: 48.29%;
+    min-height: 220px;
+
+    .popular__img {
+      @include half-sphere-border(200px, 200px, 45px, 5px, $color-beige, -10);
+
+      right: 20%;
+    }
+  }
+
+  &--medium {
+    min-width: 31.623%;
+
+    .popular__img {
+      @include half-sphere-border(400px, 400px, -45px, 5px, $color-beige, -10);
+    }
+  }
+
+  &--large {
+    padding-left: 55px;
+    padding-top: 55px;
+    min-width: 64.957%;
+
+    .popular__img {
+      @include half-sphere(450px, 450px, 45px, 5px, $color-beige, -10, 'right');
+
+      right: 10%;
+    }
+  }
+}
+
+.popular__info {
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: $font-title-bold;
+    font-weight: 700;
+    font-size: rem(14);
+    letter-spacing: $letter-spacing;
+    color: rgba($color: $color-black, $alpha: 0.82);
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0;
+    font-family: $font-alt;
+    font-size: rem(16);
+    color: rgba($color: $color-black, $alpha: 0.82);
+  }
+
+  a {
+    @include interactive-opacity;
+
+    position: relative;
+    margin-top: auto;
+    padding-left: 48px;
+    font-family: $font-title-regular;
+
+    &::before {
+      @include pseudo;
+
+      left: 0;
+      top: 11px;
+      height: 1px;
+      width: 30px;
+      background-color: $color-haze;
+    }
+  }
+}
+
+.popular__item--large h3 {
+  font-size: rem(18);
+}
+
+.popular__img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}

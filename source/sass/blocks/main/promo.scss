@@ -1,0 +1,70 @@
+.promo {
+  display: flex;
+  margin-top: -74px;
+  min-height: 735px;
+  overflow: hidden;
+}
+
+.promo__wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.promo__socials {
+  display: flex;
+  align-items: center;
+  margin-right: 110px;
+}
+
+.promo__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 10.6%;
+
+  h2 {
+    position: relative;
+    margin: 0;
+    font-family: $font-title-regular;
+    font-size: rem(45);
+    font-weight: 400;
+
+    &::before {
+      @include pseudo;
+
+      top: 37px;
+      left: -65px;
+      width: 50px;
+      height: 1px;
+      background-color: $color-black;
+    }
+  }
+
+  p {
+    margin: 0;
+    margin-bottom: 20px;
+
+    &:first-of-type {
+      font-family: $font-title-regular;
+      font-size: rem(30);
+    }
+
+    &:last-of-type {
+      margin-bottom: 60px;
+      max-width: 265px;
+      font-family: $font-main-light;
+      font-size: rem(14);
+    }
+  }
+}
+
+.promo__img {
+  @include make-adaptive-bg('../img/main/watch-main', 'png');
+  @include half-sphere(944px, 944px, -175px, -149px, $color-beige, -10, 'left');
+
+  position: relative;
+  width: 504px;
+  background-repeat: no-repeat;
+  background-size: 98%;
+  background-position: top -14px center;
+}

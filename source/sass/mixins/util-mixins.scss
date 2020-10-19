@@ -1,3 +1,7 @@
+// ---------------------------
+// Common mixins
+// ___________________________
+
 // typography
 
 @function rem($size) {
@@ -46,11 +50,25 @@
 
   &:hover,
   &:focus {
-    opacity: 0.7;
+    opacity: $hover-opacity;
   }
 
   &:active {
-    opacity: 0.5;
+    opacity: $active-opacity;
+  }
+}
+
+@mixin interactive-background($color) {
+  transition: background $default-transition-settings;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: rgba($color: $color, $alpha: $active-opacity);
+  }
+
+  &:active {
+    background-color: rgba($color: $color, $alpha: $active-opacity);
   }
 }
 
@@ -241,4 +259,69 @@
       background-image: none;
     }
   }
+}
+
+// ---------------------------
+// Project mixins
+// ___________________________
+
+@mixin half-sphere($width, $height, $left, $top, $color, $z-index, $direction) {
+  &::before {
+    @include pseudo;
+
+    left: $left;
+    top: $top;
+    z-index: $z-index;
+    width: $width;
+    height: $height;
+    border-radius: 50%;
+    background: linear-gradient(to top, $color, rgba(225, 225, 225, 0.1));
+  }
+
+  &::after {
+    @include pseudo;
+
+    left: $left + ($width / 2);
+    top: $top;
+    z-index: $z-index / 2;
+    width: $width / 2;
+    height: $height;
+    background-color: $color-default-white;
+
+    @if ($direction == right) {
+      left: $left;
+    }
+  }
+}
+
+@mixin half-sphere-border($width, $height, $left, $top, $color, $z-index) {
+  &::before {
+    @include pseudo;
+
+    left: $left;
+    top: $top;
+    z-index: $z-index;
+    width: $width;
+    height: $height;
+    border-radius: 50%;
+    background: linear-gradient(to top, $color, rgba(225, 225, 225, 0.1));
+  }
+
+  &::after {
+    @include pseudo;
+
+    left: $left;
+    top: $top + 8px;
+    z-index: $z-index / 2;
+    width: $width - 5px;
+    height: $height - 10px;
+    border-radius: 50%;
+    background-color: $color-default-white;
+  }
+}
+
+@mixin section-title {
+  font-family: $font-title-regular;
+  font-size: rem(32);
+  font-weight: 400;
 }

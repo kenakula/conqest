@@ -1,0 +1,33 @@
+.button {
+  @include button-reset;
+
+  font-family: $font-main-medium;
+  font-size: rem(12);
+  letter-spacing: $letter-spacing;
+  color: $color-default-white;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all $default-transition-settings;
+
+  &--big {
+    padding: 24px 15px 23px;
+    max-width: 205px;
+  }
+
+  &--small {
+    padding: 22px 15px 21px;
+    max-width: 185px;
+  }
+
+  &--dark {
+    @include interactive-background($color-masala);
+
+    background-color: $color-masala;
+  }
+
+  &--light {
+    @include interactive-background($color-cameo);
+
+    background-color: $color-cameo;
+  }
+}

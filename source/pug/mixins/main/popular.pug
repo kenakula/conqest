@@ -1,0 +1,27 @@
+mixin popular(props={}, mod)
+  -
+    const {title, link, items} = props;
+
+  section.popular(class= (mod !== undefined) ? 'popular--' + mod : null)
+    .popular__wrapper.container
+      h2= title
+      a(href= link) Смотреть все
+      ul.popular__list
+        each item in items
+          +popular-item(item)
+
+mixin popular-item(item)
+  -
+    const price = item.price + ' ' + item.currency;
+    let img = item.img;
+    let {path, image, imgType, altText, width, height} = img;
+    let itemClass = 'popular__item--' + item.mod;
+
+  li.popular__item(class= itemClass)
+    .popular__info
+      h3= item.brand
+      p= price
+      a(href= item.link) Подробнее
+    .popular__img
+      +picture({path, image, imgType, altText, width, height})
+

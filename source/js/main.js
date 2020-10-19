@@ -3,6 +3,7 @@ import { iosVhFix } from './utils/ios-vh-fix';
 
 import { initModals } from './modules/init-modals';
 import { menuToggler, onMenuTogglerToggleClass } from './modules/toggler';
+import { initSlider } from './modules/slider';
 
 // Utils
 // ---------------------------------
@@ -14,6 +15,9 @@ iosVhFix();
 // ---------------------------------
 
 initModals();
+
 if (menuToggler) {
   menuToggler.addEventListener('click', onMenuTogglerToggleClass);
 }
+
+initSlider();

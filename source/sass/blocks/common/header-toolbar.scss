@@ -19,21 +19,13 @@
 
 .header-toolbar__button {
   @include button-reset;
+  @include interactive-opacity;
 
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   outline: none;
-
-  &:hover,
-  &:focus {
-    opacity: $hover-opacity;
-  }
-
-  &:active {
-    opacity: $active-opacity;
-  }
 
   span {
     position: absolute;

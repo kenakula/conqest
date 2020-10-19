@@ -1,0 +1,14 @@
+mixin promo(props={})
+
+
+
+  section.promo
+    .promo__wrapper.container
+      .promo__socials
+        +socials(socials)
+      .promo__info
+        h2= props.title
+        p= props.subtitle
+        p= props.para_1
+        +button(props.button.text, 'dark, big', true, 'catalog.html')
+      .promo__img

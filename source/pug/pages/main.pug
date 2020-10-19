@@ -1,16 +1,20 @@
 extends ../base/layout.pug
 
 block data
-  include ../data/placeholder.pug
   include ../data/main-nav.data.pug
   include ../data/header.data.pug
+  include ../data/promo.data.pug
+  include ../data/socials.data.pug
+  include ../data/popular.data.pug
+  include ../data/advantages.data.pug
 
 block variables
   -
-    const title = 'ProjectName — Главная'
-    const hasHeader = true
-    const hasFooter = true
-    const currentPage = 'main'
+    const title = 'ProjectName — Главная';
+    const pageDescription = 'Интернет-магазин наручных часов и аксессуарам к ним';
+    const hasHeader = true;
+    const hasFooter = true;
+    const currentPage = 'main';
 
 block append head
   <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon.png">
@@ -27,5 +31,9 @@ block nav
 
 block main
   main
+    h1.visually-hidden Интернет магазин наручных часов и аксессуаров к ним
+    +promo(promo)
+    +popular(popular)
+    +advantages(advantages)
 
 block modals
